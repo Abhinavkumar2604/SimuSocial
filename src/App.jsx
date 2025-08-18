@@ -1,14 +1,14 @@
+import React from "react";
+import Signup from "./components/Signup/Signup.jsx";
 
-import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Details from './Form/Details.jsx';
+import "./App.css";
+
 function App() {
-
   return (
     <>
-      <Details />
+      <Signup />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
