@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-
+import './Card.css'
 function Card({name, email}) {
     return (
         <div className="card">

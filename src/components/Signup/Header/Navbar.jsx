@@ -1,5 +1,5 @@
 import Card from "../Card/Card";
-
+import GetDataComponent from "../../API/Users";
 
 const Navbar = () => {
     return (
@@ -22,7 +22,10 @@ const Navbar = () => {
             </div>
         </nav>
         <Card name="Simpler Technologies" email="example@gmail.com"/>
+        <div className="users-container">
 
+            <GetDataComponent />
+        </div>
         </>
     );
 };
