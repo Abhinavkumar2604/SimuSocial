@@ -12,14 +12,16 @@ const GetDataComponent = () => {
         const getData = async () => {
             try {
                 const response = await axios.get(API);
-                console.log("API Response:", response.data); // check structure
-                setUsers(response.data.users); // extract array
+                const userData = response.data.users;
+                setUsers(userData);
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
         };
         getData();
     }, []);
+
+    
 
     return (
         <>

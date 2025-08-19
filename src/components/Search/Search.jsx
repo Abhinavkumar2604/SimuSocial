@@ -4,11 +4,10 @@ import "./Search.css";
 function Search() {
     const [searchTerm, setSearchTerm] = useState("");
 
-const handleChange = (e) => {
-    const value = e.target.value;
-    console.log("Search Term:", value);
-    setSearchTerm(value);
-};
+    const handleChange = (e) => {
+        const value = e.target.value;
+        setSearchTerm(value);
+    };
 
 return (
     <>
