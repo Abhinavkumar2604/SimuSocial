@@ -31,7 +31,7 @@ const GetDataComponent = () => {
         <div>
             <Search />
         </div>
-            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" className="scrollspy-example" style={{ height: "200px", overflowY: "scroll" }} >
+            <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-offset="0" className="scrollspy-example" style={{ height: "300px", overflowY: "scroll" }} >
             <table className="table">
                 <thead className="thead-light">
                     <tr>
