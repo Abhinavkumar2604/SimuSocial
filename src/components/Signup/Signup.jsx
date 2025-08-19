@@ -1,10 +1,17 @@
 import { useState } from "react";
 import "./Signup.css";
+import Card from "./Card/Card";
+import PropTypes from 'prop-types';
 
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+
+  Card.propTypes = {
+    name: PropTypes.string.isRequired, 
+    email: PropTypes.string.isRequired
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault(); // prevent page reload
@@ -33,8 +40,11 @@ function Signup() {
     alert("Form submitted successfully!");
   };
 
+
   return (
+    <>
     <div className='container mt-4'>
+      
       <h3>Sign Up Form</h3>
       <p className='fill'>Please fill in this form to create an account.</p>
 
@@ -79,11 +89,15 @@ function Signup() {
           </small>
         </div>
 
-        <button type='submit' className='btn btn-primary'>
+        <button type='submit' className='btn btn-primary' >
           Submit
         </button>
+        <a href='/home' className='btn btn-secondary ms-2'>
+          Go to Home page
+        </a>
       </form>
     </div>
+    </>
   );
 }
 
