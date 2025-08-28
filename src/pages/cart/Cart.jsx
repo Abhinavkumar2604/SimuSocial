@@ -1,8 +1,11 @@
-import React from "react";
-import { useSelector } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux";
+import { removeUser } from "../../store/slices/users.slice";
 
 function Cart() {
   const users = useSelector((state) => state.users);
+  
+  const dispatch = useDispatch();
 
   return (
     <div>
@@ -25,6 +28,7 @@ function Cart() {
                 {user.firstName} {user.lastName}
               </td>
               <td>{user.email}</td>
+              <td><button onClick={() => dispatch(removeUser(user.id))}>Remove from cart</button></td>
             </tr>
           ))}
         </tbody>
