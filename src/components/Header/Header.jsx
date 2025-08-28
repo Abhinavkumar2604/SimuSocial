@@ -1,20 +1,6 @@
-
-import Card from "../Card/Card";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [userData, setUserData] = useState({
-    name: "Simpler Technologies",
-    email: "example@gmail.com",
-  });
-
-  useEffect(() => {
-    const storedData = localStorage.getItem("userData");
-    if (storedData) {
-      setUserData(JSON.parse(storedData));
-    }
-  }, []);
-
   return (
     <>
       <nav className='navbar'>
@@ -38,7 +24,6 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      <Card name={userData.name} email={userData.email} />
     </>
   );
 };

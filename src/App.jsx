@@ -1,23 +1,30 @@
-import Signup from "./components/Signup1/Signup.jsx";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+
+import Signup from "./pages/signup/Signup.jsx";
+import Navbar from "./components/Header/Header.jsx";
+import Home from "./pages/home/Home.jsx";
+import Cart from "./pages/cart/Cart.jsx";
+import { store } from "./store/store.js";
+
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Header/Navbar.jsx";
-import GetDataComponent from "./components/API/Users.jsx";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="app">
-        <Navbar />
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Signup />} />
-            <Route path="/home" element={<GetDataComponent />} />
-          </Routes>
+    <Provider store={store}>
+      <BrowserRouter>
+        <div className='app'>
+          <Navbar />
+          <div className='main-content'>
+            <Routes>
+              <Route path='/signup' element={<Signup />} />
+              <Route path='/home' element={<Home />} />
+              <Route path='/cart' element={<Cart />} />
+            </Routes>
+          </div>
         </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
