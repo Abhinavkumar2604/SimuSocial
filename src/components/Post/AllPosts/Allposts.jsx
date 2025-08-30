@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Allposts.css";
-import Post from "../Post/Post";
+import Post from "../Post";
 
 function Allposts() {
   const [posts, setPosts] = useState([]);
@@ -45,9 +45,10 @@ function Allposts() {
   }
 
   return (
+    <>
     <div className='all-posts-container'>
       <h2 className='all-posts-heading'>All Posts</h2>
-
+      </div>
       <div className='tags-container d-flex flex-wrap gap-2 mb-4'>
         {tags?.map((tag, index) => (
           <button
@@ -62,7 +63,8 @@ function Allposts() {
       <div className='all-posts-list'>
         <Post posts={posts} />
       </div>
-    </div>
+    
+    </>
   );
 }
 

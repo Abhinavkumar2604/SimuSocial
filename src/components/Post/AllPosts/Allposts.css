@@ -67,3 +67,46 @@
   color: #bad3d3;
   margin: 0;
 }
+/* Container for tags */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  width: 100%;
+  padding: 0 40px;
+}
+
+/* Tag button (pill) */
+.tags-container .btn {
+  text-align: center;
+  background: transparent;
+  border: 2px solid rgb(0, 126, 118);
+  color: rgb(0, 126, 118);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 50px; /* pill shape */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+/* Hover */
+.tags-container .btn:hover {
+  background: rgb(0, 126, 118);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 126, 118, 0.25);
+}
+
+/* Active */
+.tags-container .btn.active {
+  background: linear-gradient(135deg, rgb(0, 126, 118), #2EC4B6);
+  color: #fff;
+  border-color: rgb(0, 126, 118);
+}
+
+

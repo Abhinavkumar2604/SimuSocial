@@ -54,3 +54,66 @@
 /* Post Body */
 .user-post-card p {
   font-size: 1
+}
+/* Override Bootstrap card */
+.card {
+  background-color: rgb(0, 126, 118) !important; /* teal green */
+  border-radius: 14px !important;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin-bottom: 15px;
+  border: none !important; /* remove default border */
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 146, 132, 0.25);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* User Info */
+.user-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.user-name {
+      font-size: 35px;
+    letter-spacing: 5px;
+    font-family: sans-serif;
+  color: #ffffff;
+}
+
+.user-username {
+  font-size: 16px;
+  color: #bad3d3;
+  font-style: italic;
+}
+
+.user-company {
+  font-size: 22px;
+  font-weight: 500;
+  color: #ffcf99;
+}
+
+.user-email {
+  font-size: 15px;
+  color: #f8f8f8;
+}
+
+.user-phone {
+  font-size: 15px;
+  color: #bad3d3;
+}
+
+.user-country {
+  font-size: 15px;
+  color: #e0fffb;
+}

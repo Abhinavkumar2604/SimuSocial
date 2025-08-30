@@ -3,12 +3,13 @@ import { Provider } from "react-redux";
 
 import Navbar from "./components/Header/Header.jsx";
 import Home from "./pages/home/Home.jsx";
-import UserPosts from "./components/UsersPosts/UserPosts.jsx";
 
 import { store } from "./store/store.js";
 
 import "./App.css";
-import Allposts from "./components/AllPosts/Allposts.jsx";
+import Allposts from "./components/Post/AllPosts/Allposts.jsx";
+import UserPosts from "./components/Post/usersPosts/userPosts.jsx";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 function App() {
   return (

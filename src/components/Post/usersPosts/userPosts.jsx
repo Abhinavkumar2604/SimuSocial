@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./UserPosts.css";
-import Post from "../Post/Post";
+import Post from "../Post";
 
 function UserPosts() {
   const { userId } = useParams();
@@ -26,13 +26,29 @@ function UserPosts() {
   }, [userId]);
 
   return (
-    <div className='user-posts-container'>
-      <h2 className='user-posts-heading'>Posts by User {userId}</h2>
-      <div className='user-info'>{user && <p>{user.email}</p>}</div>
+    <>
+      <div className='user-posts-container'>
+        <h2 className='user-posts-heading'>Profile</h2>
+        <div className="card">
+          <div className="card-body">
+            {user &&
+              <div className="user-card">
+                <h3 className="user-name">{`${user.firstName} ${user.lastName}`}</h3>
+                <p className="user-username">@{user.username}</p>
+                <p className="user-company">{user.company.title}</p>
+                <p className="user-email">{user.email}</p>
+                <p className="user-phone">{user.phone}</p>
+                <p className="user-country">{user.address.country}</p>
+              </div>
+            }
+          </div>
+
+        </div>
+      </div>
       <div className='user-posts-list'>
         <Post posts={posts} />
       </div>
-    </div>
+    </>
   );
 }
 
