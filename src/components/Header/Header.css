@@ -1,23 +1,47 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ab0000;
-    color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-
-    transition: background-color 0.3s ease;
+/* Navbar wrapper */
+.navbar.my-navbar {
+  background: rgb(137, 235, 197); /* violet */
+  padding: 14px 28px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
 }
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+
+/* Brand / Logo */
+.navbar.my-navbar .brand-name {
+  color: #fff !important;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar.my-navbar .brand-name:hover {
+  color: #00ff44 !important; /* coral hover */
+  transform: scale(1.05);
+}
+
+/* Navigation links */
+.navbar.my-navbar .nav-link-custom {
+  color: #fff !important;
+  font-weight: 500;
+  margin-left: 20px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s ease, border-bottom 0.2s ease;
+  padding-bottom: 2px;
+}
+
+/* Hover effect */
+.navbar.my-navbar .nav-link-custom:hover {
+  color: #2EC4B6 !important; /* mint hover */
+}
+
+/* Active link */
+.navbar.my-navbar .nav-link-custom.active {
+  color: #ffffff !important; /* coral active */
+  font-weight: 600;
+  border-bottom: 2px solid #2EC4B6; /* modern underline */
 }

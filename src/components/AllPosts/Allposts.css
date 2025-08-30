@@ -1,0 +1,53 @@
+.all-posts-container {
+  max-width: 800px;   /* nice readable width */
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* Heading */
+.all-posts-heading {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: rgb(0, 126, 118); /* violet */
+  letter-spacing: 5px;
+}
+
+/* Stack posts vertically */
+.all-posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: stretch;  /* make all cards take full width */
+}
+
+/* Post Card */
+.post-card {
+  background: rgb(0, 126, 118);;
+  border-radius: 14px;
+  padding: 20px;
+  width: 100%;  /* <<< this fixes the right floating */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 146, 132, 0.25);
+}
+
+/* Title */
+.post-card h4 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.post-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #bad3d3;
+  margin: 0;
+}

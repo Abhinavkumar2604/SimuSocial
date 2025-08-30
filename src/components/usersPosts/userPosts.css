@@ -1,0 +1,56 @@
+/* Container */
+.user-posts-container {
+  max-width: 800px; /* narrower for readability */
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* Heading */
+.user-posts-heading {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #2EC4B6; /* mint */
+  letter-spacing: 1px;
+}
+
+/* Post List (stacked vertically) */
+.user-posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* space between cards */
+}
+
+/* Post Card */
+.user-post-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.user-post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(255, 101, 132, 0.25); /* coral glow */
+}
+
+/* Post Title */
+.user-post-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #6C63FF; /* violet */
+  transition: color 0.3s ease;
+}
+
+.user-post-card:hover h4 {
+  color: #FF6584; /* coral */
+}
+
+/* Post Body */
+.user-post-card p {
+  font-size: 1

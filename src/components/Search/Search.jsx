@@ -24,7 +24,7 @@ function Search() {
         />
 
         <button className='go-to-cart-btn' onClick={() => navigate("/cart")}>
-          Go To Cart
+          Go to cart
         </button>
       </div>
     </>

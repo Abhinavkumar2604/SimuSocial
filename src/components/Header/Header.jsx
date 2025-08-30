@@ -1,30 +1,28 @@
-import React, { useEffect, useState } from "react";
-
+import { Link, NavLink } from "react-router-dom";
+import "./Header.css";
 const Navbar = () => {
   return (
-    <>
-      <nav className='navbar'>
-        <div className='container-fluid'>
-          <div className='navbar-header'>
-            <a className='navbar-brand' href='#'>
-              Simpler
-            </a>
-          </div>
-          <ul className='nav'>
-            <li className='nav-item'>
-              <a className='nav-link active' href='/'>
-                Home
-              </a>
-            </li>
-            <li className='nav-item'>
-              <a href='/' className='btn btn-primary'>
-                <span className='glyphicon glyphicon-user'></span> Sign Up
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </>
+    <nav className="navbar my-navbar sticky-top">
+      <div className="container-fluid d-flex justify-content-between align-items-center">
+        <Link className="navbar-brand brand-name" to="/">
+          MockNet
+        </Link>
+
+        <ul className="nav">
+          <li className="nav-item">
+            <NavLink className="nav-link nav-link-custom" to="/">
+              Home
+            </NavLink>
+          </li>
+        
+          <li className="nav-item">
+            <NavLink className="nav-link nav-link-custom" to="/posts">
+              Posts
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+    </nav>
   );
 };
 

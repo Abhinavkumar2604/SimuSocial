@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Search from "../../components/Search/Search";
-import { useDispatch } from "react-redux";
 import "./Home.css";
-import { addUser } from "../../store/slices/users.slice";
 
 const API = "https://dummyjson.com/users";
 
 const Home = () => {
-  const dispatch = useDispatch();
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -27,46 +25,31 @@ const Home = () => {
   return (
     <>
       <div>
-        <h2 className='heading'>Users List</h2>
+        <h1 className='heading'>Users List</h1>
       </div>
       <div>
         <Search />
       </div>
-      <div
-        data-bs-spy='scroll'
-        data-bs-target='#navbar-example2'
-        data-bs-offset='0'
-        className='scrollspy-example'
-        style={{ height: "300px", overflowY: "scroll" }}>
-        <table className='table'>
-          <thead className='thead-light'>
-            <tr>
-              <th scope='col'>ID</th>
-              <th scope='col'>User Name</th>
-              <th scope='col'>Name</th>
-              <th scope='col'>Email</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((user) => (
-              <tr key={user.id}>
-                <th scope='row'>{user.id}</th>
-                <td>{user.username}</td>
-                <td>{`${user.firstName} ${user.lastName}`}</td>
-                <td>{user.email}</td>
-                <td>
-                  <button
-                    onClick={() => {
-                      dispatch(addUser(user));
-                    }}>
-                    ADD
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="user-cards">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          {users.map((user) => (
+            <div className="col" key={user.id}>
+              <div className="profile-card">
+                <img
+                  src={user.image}
+                  alt={`${user.firstName} ${user.lastName}`}
+                  className="profile-img"
+                />
+                <h5 className="profile-name">{`${user.firstName} ${user.lastName}`}</h5>
+                <p className="profile-email">{user.email}</p>
+                <Link to={`/posts/user/${user.id}`}>View Posts</Link>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
+
+   
     </>
   );
 };
