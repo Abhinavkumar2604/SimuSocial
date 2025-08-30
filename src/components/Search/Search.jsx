@@ -1,10 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Search.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function Search() {
+function Search({ setUsers, getData }) {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    function handleSearch(searchTerm) {
+      if (searchTerm.trim().length) {
+        axios
+          .get(
+            `https://dummyjson.com/users/search?q=${encodeURIComponent(
+              searchTerm
+            )}`
+          )
+          .then((response) => {
+            setUsers(response.data.users);
+          })
+          .catch((error) => {
+            console.error("Error fetching users:", error);
+          });
+      } else {
+        getData();
+      }
+    }
+    handleSearch(searchTerm);
+  }, [searchTerm]);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -12,22 +35,16 @@ function Search() {
   };
 
   return (
-    <>
-      <div className='search-container'>
-        <input
-          className='search-input'
-          type='search'
-          placeholder='Search users...'
-          aria-label='Search'
-          value={searchTerm}
-          onChange={handleChange}
-        />
-
-        <button className='go-to-cart-btn' onClick={() => navigate("/cart")}>
-          Go to cart
-        </button>
-      </div>
-    </>
+    <div className='search-container'>
+      <input
+        className='search-input'
+        type='search'
+        placeholder='Search users...'
+        aria-label='Search'
+        value={searchTerm}
+        onChange={handleChange}
+      />
+    </div>
   );
 }
 

@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 
 import Navbar from "./components/Header/Header.jsx";
 import Home from "./pages/home/Home.jsx";
-import UserPosts from "./components/usersPosts/userPosts.jsx";
+import UserPosts from "./components/UsersPosts/UserPosts.jsx";
 
 import { store } from "./store/store.js";
 
@@ -19,9 +19,8 @@ function App() {
           <div className='main-content'>
             <Routes>
               <Route path='/' element={<Home />} />
-              
-              <Route path="/posts/user/:userId" element={<UserPosts />} />
-              <Route path="/posts" element={<Allposts />} />
+              <Route path='/user/:userId' element={<UserPosts />} />
+              <Route path='/posts' element={<Allposts />} />
             </Routes>
           </div>
         </div>

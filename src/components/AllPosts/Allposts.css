@@ -1,5 +1,5 @@
 .all-posts-container {
-  max-width: 800px;   /* nice readable width */
+  max-width: 800px; /* nice readable width */
   margin: 0 auto;
   padding: 30px 20px;
 }
@@ -10,8 +10,24 @@
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: rgb(0, 126, 118); /* violet */
+  color: rgb(0, 126, 118);
   letter-spacing: 5px;
+}
+
+/* Tags styling */
+.tags-container {
+  margin: 20px 0;
+}
+
+.tags-container .btn {
+  font-size: 0.9rem;
+  padding: 5px 15px;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.tags-container .btn:hover {
+  transform: translateY(-2px);
 }
 
 /* Stack posts vertically */
@@ -19,15 +35,15 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  align-items: stretch;  /* make all cards take full width */
+  align-items: stretch; /* make all cards take full width */
 }
 
 /* Post Card */
 .post-card {
-  background: rgb(0, 126, 118);;
+  background: rgb(0, 126, 118);
   border-radius: 14px;
   padding: 20px;
-  width: 100%;  /* <<< this fixes the right floating */
+  width: 100%; /* <<< this fixes the right floating */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
