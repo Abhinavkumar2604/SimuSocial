@@ -8,8 +8,8 @@ import { store } from "./store/store.js";
 
 import "./App.css";
 import Allposts from "./components/Post/AllPosts/Allposts.jsx";
-import UserPosts from "./components/Post/usersPosts/userPosts.jsx";
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import UserPosts from "./pages/usersPosts/userPosts.jsx";
 
 function App() {
   return (

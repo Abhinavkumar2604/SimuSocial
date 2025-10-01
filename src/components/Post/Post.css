@@ -53,4 +53,93 @@
   color: #bad3d3;
   margin: 0;
 }
+.likes, .dislikes, .views {
+      color: floralwhite;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.comment-icon {
+  cursor: pointer;
+  color: #00ff6e;
+  font-size: 1.2rem;
+}
+/* Make the icon clickable */
+.comment-icon {
+  cursor: pointer;
+  font-size: 20px; /* adjust size */
+  color: rgba(49, 255, 234, 0.25);/* bootstrap primary blue */
+  transition: transform 0.2s, color 0.2s;
+}
+.post-stats i {
+  font-size: 1.2rem;       /* Bigger icon */
+  margin-right: 5px;       /* spacing between icon and count */
+  transition: transform 0.2s, color 0.2s;  /* smooth hover/click */
+  cursor: pointer;         /* show hand pointer */
+}
+
+.post-stats .likes i:hover {
+  color: #000000;          /* Bootstrap primary hover */
+  transform: scale(1.2);   /* slight zoom */
+}
+
+.post-stats .dislikes i:hover {
+  color: #dc3545;          /* Bootstrap danger hover */
+  transform: scale(1.2);
+}
+
+.post-stats .views i:hover {
+  color: #0dcaf0;          /* Bootstrap info hover */
+  transform: scale(1.1);
+}
+
+/* Hover effect */
+.comment-icon:hover {
+  color: #00ff7b; /* darker blue on hover */
+  transform: scale(1.2); /* slightly enlarge on hover */
+}
+
+/* Optional: add some spacing from right */
+.d-flex.justify-content-end .comment-icon {
+  margin-right: 10px;
+}
+
+
+.comment-item {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+/* Style Bootstrap Accordion in dark theme */
+.accordion-item {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #bad3d3 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.accordion-button {
+  background-color: transparent !important;
+  color: #00fbea !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(0, 251, 234, 0.1) !important;
+  color: #00fbea !important;
+}
+
+.accordion-button::after {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.accordion-body {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  color: #bad3d3 !important;
+}
 
